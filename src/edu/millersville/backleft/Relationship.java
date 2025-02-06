@@ -6,9 +6,9 @@ package edu.millersville.backleft;
  */
 public class Relationship {
 
-    private Object rootObject;
-    private Object targetObject; 
-    private String type;
+    private final Object rootObject;
+    private final Object targetObject; 
+    private final String type;
 
 
     public Relationship(Object rootObject, Object targetObject, String type)

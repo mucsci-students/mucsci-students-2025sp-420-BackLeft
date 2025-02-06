@@ -1,99 +1,56 @@
 package edu.millersville.backleft;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * A versatile data object representing a single row in a database table.
- * This diagram dynamically stores column names and their associated values.
- */
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 public class Diagram {
+    private String diagramName;
+    private List<Class> classes;
+    private List<Relationship> relationships;
 
-    private final String diagramName;
-    private HashSet<Class> classes; 
-    private final Set<Object> relationships; 
-
-
-
-
-    /**
-     *  CONSTRUCTORS
-     */
-    public Diagram()
-    {
-        this("", new HashMap<>());
+    public Diagram(String name) {
+        this.diagramName = name;
+        this.classes = new ArrayList<>();
+        this.relationships = new ArrayList<>();
     }
 
-    public Diagram(Diagram original)
-    {
-        this.diagramName = original.getDiagramName();
-        this.fields = new HashMap<>(original.fields);
-    }   
-
-
-    public Diagram(String JSONFilePath)
-    {
-        //TODO ctor from JSON
+    public void addClass(Class umlclass) {
+        classes.add(umlclass);
     }
 
-    public Diagram(String diagramName, Map<String, Object> fields)
-    {
-        this.diagramName = diagramName;
-        this.fields = fields != null ? new HashMap<>(fields) : new HashMap<>();
+    public void addRelationship(Relationship relationship) {
+        relationships.add(relationship);
     }
 
-
-    /**
-     *  Diagram methods
-     */
-
-    // Get the name of the diagram instance
-    public String getDiagramName()
-    {
-        return diagramName;
+    // Convert to JSON and save
+    public void saveToJson(String filePath) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (FileWriter writer = new FileWriter(filePath)) {
+            gson.toJson(this, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-
-    /**
-     * Attribute/field methods of the diagram instance
-     */
-
-    // Get the value of a specific field
-    public Object getField(String fieldName)
-    {
-        return fields.get(fieldName);
+    // Load from JSON
+    public static Diagram loadFromJson(String filePath) {
+        Gson gson = new Gson();
+        try (FileReader reader = new FileReader(filePath)) {
+            return gson.fromJson(reader, Diagram.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
-    // Get all fields
-    public Map<String, Object> getAllFields()
-    {
-        return new HashMap<>(fields);
-    }
-
-    // Set or update a field value
-    public void setField(String fieldName, Object value)
-    {
-        fields.put(fieldName, value);
-    }
-
-    // Remove a field
-    public void removeField(String fieldName)
-    {
-        fields.remove(fieldName);
-    }
-
-    // Check if a field exists
-    public boolean hasField(String fieldName)
-    {
-        return fields.containsKey(fieldName);
-    }
-
-    // Convert the DataObject to a string (useful for debugging)
     @Override
-    public String toString()
-    {
-        return getDiagramName() +" {" + "\nattributes=" + fields +"\n}";
+    public String toString() {
+        return "Diagram: " + diagramName + "\nClasses: " + classes + "\nRelationships: " + relationships;
     }
 }

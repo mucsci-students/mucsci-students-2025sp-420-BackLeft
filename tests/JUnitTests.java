@@ -1,10 +1,33 @@
+import java.io.File;
+
 import org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import edu.millersville.backleft.Class;
+import edu.millersville.backleft.Diagram;
 import net.jqwik.api.*;
 
-public class MathUtilsTest {
+class DiagramTest {
+
+    @Test
+    void testJsonSaveLoad() {
+        Diagram diagram = new Diagram("TestUML");
+        Class testClass = new Class("Person");
+        testClass.addAttribute("name", "String");
+        diagram.addClass(testClass);
+
+        String filePath = "diagram.json";
+        diagram.saveToJson(filePath);
+
+        Diagram loadedDiagram = Diagram.loadFromJson(filePath);
+        assertNotNull(loadedDiagram);
+        assertEquals("TestUML", loadedDiagram.toString());
+
+        // Clean up test file
+        new File(filePath).delete();
+    }
 
     @ParameterizedTest
     @CsvSource({
