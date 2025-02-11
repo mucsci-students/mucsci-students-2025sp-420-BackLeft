@@ -15,19 +15,29 @@
 ## Overview
 
 ## Group Members
-Spencer Hoover
+Spencer Hoover\n
 Nicholas Stricker
 Juliana Vinluan
 Tim King
 
 ## Installation
 Step-by-step instructions to run the project.
+Command Line Instructions:
+New Diagram
+Load Saved Diagram
 
 ## Usage
 Instructions
 
+
 ## Technologies Used
 List languages, frameworks, and tools.
+Java
+GitHub
+VSCode
+Discord
 
 ## Features
 Main features, functionalities, benefits.
+Relationships
+Attributes
