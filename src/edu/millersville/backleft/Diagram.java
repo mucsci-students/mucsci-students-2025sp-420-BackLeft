@@ -1,35 +1,88 @@
 package edu.millersville.backleft;
 
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
 public class Diagram {
+
     private String diagramName;
-    private List<Class> classes;
+    private List<Class> classDefinitons;
+    private HashSet<Object> objectInstances;
+    private HashSet<String> classNames;
     private List<Relationship> relationships;
 
-    public Diagram(String name) {
-        this.diagramName = name;
-        this.classes = new ArrayList<>();
+
+    public Diagram() {
+        this.diagramName = "Untitled";
+        this.classDefinitons = new ArrayList<>();
+        this.classNames = new HashSet<>(){};
         this.relationships = new ArrayList<>();
     }
 
+
+    public Diagram(String name) {
+        this.diagramName = name;
+        this.classDefinitons = new ArrayList<>();
+        this.relationships = new ArrayList<>();
+    }
+
+    /**public Diagram(Scanner fileScanner) {
+
+    }*/
+
+    public String getDiagramName(){
+        return this.diagramName;
+    }
+
+    public int getObjectCount() {
+        return objectInstances.size();
+    }
+
+    public int getClassCount() {
+        return objectInstances.size();
+    }
+
+    public int getRelationshipCount()
+    {
+        return relationships.size();
+    }
+
+    public List<String> getClassNames() {
+        ArrayList<String> classlist = new ArrayList<String>();
+        for(String cls : classNames) {
+            classlist.add(cls);
+        }
+        return classlist;
+    }
+
+
     public void addClass(Class umlclass) {
-        classes.add(umlclass);
+        
+        if(classNames.contains(umlclass.getClassName()))
+            return;
+        
+        classDefinitons.add(umlclass);
+        classNames.add(umlclass.getClassName());
+
     }
 
     public void addRelationship(Relationship relationship) {
         relationships.add(relationship);
     }
 
+
+    public void addObjectInstance(Object obj) {
+        
+    }
+
+
+
+
+
+
     // Convert to JSON and save
-    public void saveToJson(String filePath) {
+/**     public void saveToJson(String filePath) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (FileWriter writer = new FileWriter(filePath)) {
             gson.toJson(this, writer);
@@ -48,7 +101,7 @@ public class Diagram {
             return null;
         }
     }
-
+*/
     @Override
     public String toString() {
         return "Diagram: " + diagramName + "\nClasses: " + classes + "\nRelationships: " + relationships;
