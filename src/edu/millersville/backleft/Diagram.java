@@ -20,27 +20,24 @@ public class Diagram {
         this.relationships = new ArrayList<>();
     }
 
-
     public Diagram(String name) {
         this.diagramName = name;
         this.classDefinitons = new ArrayList<>();
         this.relationships = new ArrayList<>();
     }
 
-    /**public Diagram(Scanner fileScanner) {
 
-    }*/
 
     public String getDiagramName(){
         return this.diagramName;
     }
 
     public int getObjectCount() {
-        return objectInstances.size();
+        return this.objectInstances.size();
     }
 
     public int getClassCount() {
-        return objectInstances.size();
+        return this.objectInstances.size();
     }
 
     public int getRelationshipCount()
