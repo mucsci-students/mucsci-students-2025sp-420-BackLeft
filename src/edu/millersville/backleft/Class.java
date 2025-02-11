@@ -28,9 +28,9 @@ public class Class {
         return new HashMap<>(attributes);
     }
 
-    // Prints a 'Class' with all of its attributes and methods
+    // Prints a 'Class' with all of its attributes
     @Override
     public String toString() {
-        return "Class: " + className + "\nAttributes: " + attributes + "\nMethods: " + methods;
+        return "Class: " + className + "\nAttributes: " + attributes;
     }
 }
