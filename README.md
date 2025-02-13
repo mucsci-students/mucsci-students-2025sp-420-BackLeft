@@ -15,7 +15,7 @@
 ## Overview
 
 ## Group Members
-Spencer Hoover\n
+Spencer Hoover/n
 Nicholas Stricker
 Juliana Vinluan
 Tim King
