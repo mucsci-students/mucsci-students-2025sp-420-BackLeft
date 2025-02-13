@@ -91,4 +91,25 @@ public class Relationship {
         }
         return rootClass.getClassName() + relationshipSymbol + targetClass.getClassName();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Relationship that = (Relationship) o;
+
+        if (!rootClass.equals(that.rootClass)) return false;
+        if (!targetClass.equals(that.targetClass)) return false;
+        return type.equals(that.type);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = rootClass.hashCode();
+        result = 31 * result + targetClass.hashCode();
+        result = 31 * result + type.hashCode();
+        return result;
+    }
+
 }
