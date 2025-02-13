@@ -91,4 +91,8 @@ public class Relationship {
         }
         return rootClass.getClassName() + relationshipSymbol + targetClass.getClassName();
     }
+
+    /**
+     * Testing
+     */
 }
