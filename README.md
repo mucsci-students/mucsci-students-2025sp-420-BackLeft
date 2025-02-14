@@ -1,7 +1,7 @@
 > mucsci-students-2025sp-420-BackLeft
 
 # BackLeft
-[Description of Project here]
+CLass Diagram Program
 
 ## Table of Contents
 - [Overview](#overview)
@@ -13,7 +13,7 @@
 
 
 ## Overview
-##### This is a Class Diagram Program
+### This is a Class Diagram Program
 
 ## Group Members
 #### Spencer Hoover
@@ -22,10 +22,10 @@
 #### Tim King
 
 ## Installation
-#### Prerequisites: Required software or tools.
-#### Downloading or Cloning: How to get the code.
-#### Dependencies: Commands to install necessary libraries.
-#### Environment Setup: Any configuration details.
+##### Prerequisites: Required software or tools.
+##### Downloading or Cloning: How to get the code.
+##### Dependencies: Commands to install necessary libraries.
+##### Environment Setup: Any configuration details.
 
 ## Usage
 ### Step-by-step instructions to run the project.
@@ -38,12 +38,12 @@ Command Line Instructions:
 
 ## Technologies Used
 List languages, frameworks, and tools.
-> + Java
-> + GitHub
-> + VSCode
-> + Discord
+##### + Java
+##### + GitHub
+##### + VSCode
+##### + Discord
 
 ## Features
-Main features, functionalities, benefits.
-Relationships
-Attributes
+###### Main features, functionalities, benefits.
+###### Relationships
+###### Attributes
