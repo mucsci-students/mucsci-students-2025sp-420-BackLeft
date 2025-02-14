@@ -34,8 +34,18 @@
 Command Line Instructions:
 - new : To Create a New Diagram
 - load : To Load a Saved Diagram
+- save : To Save the current diagram
 - help : To be taken to the help menu
 - exit : To exit the program
+- add class : To add a class to the current diagram
+- remove class : To remove a class from the current diagram
+- add relationship : To add a relationship to the specified classes
+- remove relationship : To remove the relationship from the specified classes
+- add attribute : To add an attribute to the current class
+- remove attribute : To remove an attribute from the current class
+- list classes : To list all the classes in the current diagram
+- list class attributes : To list all the classes and their attributes in the current diagram
+- list relationships : To list all the active relationships between classes in the current diagram
 
 
 ## Technologies Used
