@@ -15,19 +15,24 @@
 ## Overview
 
 ## Group Members
-Spencer Hoover/n
+Spencer Hoover\n
 Nicholas Stricker
-Juliana Vinluan
-Tim King
+- Juliana Vinluan
+- Tim King
 
 ## Installation
-Step-by-step instructions to run the project.
-Command Line Instructions:
-New Diagram
-Load Saved Diagram
+Prerequisites: Required software or tools.
+Downloading or Cloning: How to get the code.
+Dependencies: Commands to install necessary libraries.
+Environment Setup: Any configuration details.
 
 ## Usage
-Instructions
+Step-by-step instructions to run the project.
+Command Line Instructions:
+new : To Create a New Diagram
+load : To Load a Saved Diagram
+help : To be taken to the help menu
+exit : To exit the program
 
 
 ## Technologies Used
