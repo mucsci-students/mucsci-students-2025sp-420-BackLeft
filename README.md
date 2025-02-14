@@ -1,4 +1,4 @@
-# mucsci-students-2025sp-420-BackLeft
+> mucsci-students-2025sp-420-BackLeft
 
 # BackLeft
 [Description of Project here]
@@ -27,20 +27,20 @@ Dependencies: Commands to install necessary libraries.
 Environment Setup: Any configuration details.
 
 ## Usage
-Step-by-step instructions to run the project.
-> Command Line Instructions:
-> new : To Create a New Diagram
-> load : To Load a Saved Diagram
-> help : To be taken to the help menu
-> exit : To exit the program
+### Step-by-step instructions to run the project.
+Command Line Instructions:
+- new : To Create a New Diagram
+- load : To Load a Saved Diagram
+- help : To be taken to the help menu
+- exit : To exit the program
 
 
 ## Technologies Used
 List languages, frameworks, and tools.
-+ Java
-+ GitHub
-+ VSCode
-+ Discord
+> + Java
+> + GitHub
+> + VSCode
+> + Discord
 
 ## Features
 Main features, functionalities, benefits.
