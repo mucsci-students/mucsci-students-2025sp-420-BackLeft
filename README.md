@@ -1,7 +1,7 @@
 > mucsci-students-2025sp-420-BackLeft
 
 # BackLeft
-CLass Diagram Program
+Class Diagram Program
 
 ## Table of Contents
 - [Overview](#overview)
@@ -13,7 +13,7 @@ CLass Diagram Program
 
 
 ## Overview
-### This is a Class Diagram Program
+### This is an interactive Class Diagram Program
 
 ## Group Members
 #### Spencer Hoover
