@@ -35,7 +35,7 @@ Command Line Instructions:
 - new : To Create a New Diagram
 - load : To Load a Saved Diagram
 - save : To Save the current diagram
-- help : To be taken to the help menu
+- --help : To be taken to the help menu
 - exit : To exit the program
 - add class : To add a class to the current diagram
 - remove class : To remove a class from the current diagram
