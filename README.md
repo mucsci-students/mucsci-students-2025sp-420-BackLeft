@@ -1,12 +1,9 @@
 > mucsci-students-2025sp-420-BackLeft
 
-# BackLeft
-##### Millersville University of Pennsylvania
-##### CSCI 420 - Software Engineering
-
 ## Table of Contents
 - [Overview](#overview)
 - [Group Members](#group-members)
+- [Education](#education)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
@@ -22,6 +19,11 @@
 #### Nicholas Stricker
 #### Juliana Vinluan
 #### Tim King
+
+## Education
+### BackLeft
+##### Millersville University of Pennsylvania
+##### CSCI 420 - Software Engineering
 
 ## Installation
 ##### Prerequisites: Required software or tools.
