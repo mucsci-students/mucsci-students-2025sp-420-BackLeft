@@ -13,12 +13,13 @@
 
 
 ## Overview
+##### This is a Class Diagram Program
 
 ## Group Members
-### Spencer Hoover
-### Nicholas Stricker
-### Juliana Vinluan
-### Tim King
+#### Spencer Hoover
+#### Nicholas Stricker
+#### Juliana Vinluan
+#### Tim King
 
 ## Installation
 #### Prerequisites: Required software or tools.
