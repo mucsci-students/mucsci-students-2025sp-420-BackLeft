@@ -14,8 +14,8 @@
 
 
 ## Overview
-### This project is a Class Diagram Program designed to simplify the design and documentation of object-oriented systems. It provides an intuitive, graphical interface for creating, modifying, and visualizing class diagrams according to UML standards. The tool is perfect for developers, designers, and software architects who need to plan, review, and communicate the structure of their code.
-### This tool streamlines the process of building class diagrams, making it easier to conceptualize and communicate the architecture of complex systems. Whether you're planning a new project or refactoring an existing one, this program serves as a valuable resource in your development workflow.
+#### This project is a Class Diagram Program designed to simplify the design and documentation of object-oriented systems. It provides an intuitive, graphical interface for creating, modifying, and visualizing class diagrams according to UML standards. The tool is perfect for developers, designers, and software architects who need to plan, review, and communicate the structure of their code.
+#### This tool streamlines the process of building class diagrams, making it easier to conceptualize and communicate the architecture of complex systems. Whether you're planning a new project or refactoring an existing one, this program serves as a valuable resource in your development workflow.
 
 ## Group Members
 #### Spencer Hoover
@@ -37,12 +37,14 @@ Command Line Instructions:
 - save : To Save the current diagram
 - --help : To be taken to the help menu
 - exit : To exit the program
+#####
 - add class : To add a class to the current diagram
 - remove class : To remove a class from the current diagram
 - add relationship : To add a relationship to the specified classes
 - remove relationship : To remove the relationship from the specified classes
 - add attribute : To add an attribute to the current class
 - remove attribute : To remove an attribute from the current class
+#####
 - list classes : To list all the classes in the current diagram
 - list class attributes : To list all the classes and their attributes in the current diagram
 - list relationships : To list all the active relationships between classes in the current diagram
