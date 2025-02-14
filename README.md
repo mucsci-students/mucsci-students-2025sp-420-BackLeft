@@ -21,9 +21,9 @@
 #### Tim King
 
 ## Education
-### BackLeft
 ##### Millersville University of Pennsylvania
 ##### CSCI 420 - Software Engineering
+##### Group Name: BackLeft
 
 ## Installation
 ##### Prerequisites: Required software or tools.
