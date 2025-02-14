@@ -1,7 +1,8 @@
 > mucsci-students-2025sp-420-BackLeft
 
 # BackLeft
-Class Diagram Program
+##### Millersville University of Pennsylvania
+##### CSCI 420 - Software Engineering
 
 ## Table of Contents
 - [Overview](#overview)
@@ -13,7 +14,8 @@ Class Diagram Program
 
 
 ## Overview
-### This is an interactive Class Diagram Program
+### This project is a Class Diagram Program designed to simplify the design and documentation of object-oriented systems. It provides an intuitive, graphical interface for creating, modifying, and visualizing class diagrams according to UML standards. The tool is perfect for developers, designers, and software architects who need to plan, review, and communicate the structure of their code.
+### This tool streamlines the process of building class diagrams, making it easier to conceptualize and communicate the architecture of complex systems. Whether you're planning a new project or refactoring an existing one, this program serves as a valuable resource in your development workflow.
 
 ## Group Members
 #### Spencer Hoover
@@ -45,5 +47,7 @@ List languages, frameworks, and tools.
 
 ## Features
 ###### Main features, functionalities, benefits.
-###### Relationships
-###### Attributes
+#### Class Creation: Easily add classes with customizable attributes and methods.
+#### Relationship Mapping: Define and visualize different types of relationships such as generalization, composition, aggregation, and association.
+#### Dynamic Visualization: Automatically update the diagram as you make changes, ensuring the visual representation stays in sync with your design.
+#### Interactive Interface: TBD
