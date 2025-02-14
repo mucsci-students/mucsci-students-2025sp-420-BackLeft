@@ -15,16 +15,16 @@
 ## Overview
 
 ## Group Members
-- Spencer Hoover
-- Nicholas Stricker
-- Juliana Vinluan
-- Tim King
+### Spencer Hoover
+### Nicholas Stricker
+### Juliana Vinluan
+### Tim King
 
 ## Installation
-Prerequisites: Required software or tools.
-Downloading or Cloning: How to get the code.
-Dependencies: Commands to install necessary libraries.
-Environment Setup: Any configuration details.
+#### Prerequisites: Required software or tools.
+#### Downloading or Cloning: How to get the code.
+#### Dependencies: Commands to install necessary libraries.
+#### Environment Setup: Any configuration details.
 
 ## Usage
 ### Step-by-step instructions to run the project.
