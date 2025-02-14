@@ -15,8 +15,8 @@
 ## Overview
 
 ## Group Members
-Spencer Hoover\n
-Nicholas Stricker
+- Spencer Hoover
+- Nicholas Stricker
 - Juliana Vinluan
 - Tim King
 
@@ -28,19 +28,19 @@ Environment Setup: Any configuration details.
 
 ## Usage
 Step-by-step instructions to run the project.
-Command Line Instructions:
-new : To Create a New Diagram
-load : To Load a Saved Diagram
-help : To be taken to the help menu
-exit : To exit the program
+> Command Line Instructions:
+> new : To Create a New Diagram
+> load : To Load a Saved Diagram
+> help : To be taken to the help menu
+> exit : To exit the program
 
 
 ## Technologies Used
 List languages, frameworks, and tools.
-Java
-GitHub
-VSCode
-Discord
++ Java
++ GitHub
++ VSCode
++ Discord
 
 ## Features
 Main features, functionalities, benefits.
