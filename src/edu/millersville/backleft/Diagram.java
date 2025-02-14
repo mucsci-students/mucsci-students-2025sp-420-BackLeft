@@ -68,6 +68,9 @@ public class Diagram {
         relationships.add(relationship);
     }
 
+    public void removeRelationship(Relationship relationship) {
+        relationships.remove(relationship);
+    }
 
     public void addObjectInstance(Object obj) {
         

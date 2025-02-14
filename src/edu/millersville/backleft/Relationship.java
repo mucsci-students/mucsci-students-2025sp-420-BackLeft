@@ -91,4 +91,28 @@ public class Relationship {
         }
         return rootClass.getClassName() + relationshipSymbol + targetClass.getClassName();
     }
+
+    /**
+     * Checks if this relationship is equal to another object.
+     * @param o the object to compare to
+     * @return true if the objects are equal, false otherwise
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Relationship that = (Relationship) o;
+        return Objects.equals(rootClass, that.rootClass) &&
+               Objects.equals(targetClass, that.targetClass) &&
+               Objects.equals(type, that.type);
+    }
+
+    /**
+     * Returns the hash code for this relationship.
+     * @return the hash code
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(rootClass, targetClass, type);
+    }
 }
