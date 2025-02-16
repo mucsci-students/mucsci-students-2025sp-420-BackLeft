@@ -39,7 +39,7 @@ public class Main {
             }
             else if(command.equals("Help") || command.equals("help"))
             {
-                printHelpMenu();
+                HelpMenu();
             }
             else if(command.equals("Exit") || command.equals("exit")|| command.equals("Quit") || command.equals("quit"))
             {
@@ -61,7 +61,7 @@ public class Main {
         System.out.println("\n\n ** LOADING DIAGRAM FROM JSON..... (next set of prompts for diagram name, or filepath) **");    
     }
 
-    public static void printHelpMenu(){
+    public static void HelpMenu(){
         System.out.println("\n\n ** Help Menu **");
     }
 
