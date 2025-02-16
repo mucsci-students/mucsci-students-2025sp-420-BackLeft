@@ -63,6 +63,24 @@ public class Main {
 
     public static void printHelpMenu(){
         System.out.println("\n\n ** Help Menu **");
+        System.out.println("\n=== Class Diagram Program Help Menu ===");
+        System.out.println("Usage:");
+        System.out.println("  java HelpMenuCLI [options]\n");
+        System.out.println("Options:");
+        System.out.println("  -h, --help      Show this help menu\n");
+        System.out.println("Interactive Commands:");
+        System.out.println("  command              Display this command menu");
+        System.out.println("  exit                 Exit the program\n");
+        System.out.println("  new                  Create a new Class Diagram\n");
+        System.out.println("  save                 Save the current CLass Diagram\n");
+        System.out.println("  load                 Load a saved Class Diagram\n");
+        System.out.println("  add class            Add a class\n");
+        System.out.println("  remove class         Remove a class\n");
+        System.out.println("Description:");
+        System.out.println("  This program is a command-line tool designed to help you create and manage");
+        System.out.println("  class diagrams. You can use it to define classes, their attributes, methods,");
+        System.out.println("  and relationships (e.g., inheritance, composition, etc.).");
+        System.out.println("========================================\n");
     }
 
     public static void createNewDiagram(){
