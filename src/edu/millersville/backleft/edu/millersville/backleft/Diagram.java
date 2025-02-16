@@ -16,14 +16,17 @@ public class Diagram {
     public Diagram() {
         this.diagramName = "Untitled";
         this.classDefinitons = new ArrayList<>();
-        this.classNames = new HashSet<>(){};
+        this.classNames = new HashSet<>();
         this.relationships = new ArrayList<>();
+        this.objectInstances = new HashSet<>(); // Added initialization for objectInstances
     }
 
     public Diagram(String name) {
         this.diagramName = name;
         this.classDefinitons = new ArrayList<>();
+        this.classNames = new HashSet<>();
         this.relationships = new ArrayList<>();
+        this.objectInstances = new HashSet<>();
     }
 
 
@@ -102,8 +105,17 @@ public class Diagram {
         }
     }
 */
-    @Override
-    public String toString() {
-        return "Diagram: " + diagramName + "\nClasses: " + classDefinitons + "\nRelationships: " + relationships;
+@Override
+public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Diagram: ").append(diagramName).append("\nClasses:\n");
+    for (UmlClass umlClass : classDefinitons) {
+        sb.append("  ").append(umlClass.getClassName()).append("\n");
     }
+    sb.append("Relationships:\n");
+    for (Relationship relationship : relationships) {
+        sb.append("  ").append(relationship.toString()).append("\n");
+    }
+    return sb.toString();
+}
 }

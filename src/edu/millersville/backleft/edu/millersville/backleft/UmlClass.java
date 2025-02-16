@@ -24,6 +24,7 @@ public class UmlClass {
     public void addAttribute(String name, String type) {
         attributes.put(name, type);
     }
+    
 
     // Creates a new method within an instance of a 'Class'
     public void addMethod(String name, String returnType) {

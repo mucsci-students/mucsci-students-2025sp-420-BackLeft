@@ -54,6 +54,6 @@ public class Attribute {
     */
     @Override
     public String toString() {
-        return "Attribute{name='" + name + "', type='" + type + "', rootClass=" + rootClass + "}";
+        return "Attribute{" + type + ": " + name  + "', rootClass=" + rootClass + "}";
     }
 }

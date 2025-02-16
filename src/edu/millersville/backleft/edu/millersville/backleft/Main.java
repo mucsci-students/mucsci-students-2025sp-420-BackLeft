@@ -1,4 +1,6 @@
 package edu.millersville.backleft;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -83,8 +85,70 @@ public class Main {
         System.out.println("========================================\n");
     }
 
-    public static void createNewDiagram(){
-        System.out.println("\n\n ** NEW DIAGRAM ENTRY POINT (next set of prompts for diagram name and blank diagram) **");
+    public static void createNewDiagram() {
+        Scanner scanner = new Scanner(System.in);
+        Diagram diagram = new Diagram();
+
+        while (true) {
+            System.out.print("Enter the name of the UML class (or type 'done' to finish): ");
+            String className = scanner.nextLine();
+            if (className.equalsIgnoreCase("done")) {
+                break;
+            }
+            UmlClass umlClass = new UmlClass(className);
+            diagram.addClass(umlClass);
+            System.out.println("Class " + className + " created.");
+        }
+
+        System.out.println("Do you want to create relationships between the classes? (yes/no)");
+        String response = scanner.nextLine();
+        if (response.equalsIgnoreCase("yes")) {
+            createRelationships(scanner, diagram);
+        }
+
+        System.out.println("Diagram creation complete.");
+    }
+
+    private static void createRelationships(Scanner scanner, Diagram diagram) {
+        while (true) {
+            System.out.println("Available classes: " + diagram.getClassNames());
+            System.out.print("Enter the name of the source class (or type 'done' to finish): ");
+            String sourceClassName = scanner.nextLine();
+            if (sourceClassName.equalsIgnoreCase("done")) {
+                break;
+            }
+            UmlClass sourceClass = findClassByName(diagram.getClassNames(), sourceClassName);
+            if (sourceClass == null) {
+                System.out.println("Class " + sourceClassName + " not found.");
+                continue;
+            }
+    
+            List<String> targetClassNames = new ArrayList<>(diagram.getClassNames());
+            targetClassNames.remove(sourceClassName);
+            System.out.println("Available target classes: " + targetClassNames);
+            System.out.print("Enter the name of the target class: ");
+            String targetClassName = scanner.nextLine();
+            UmlClass targetClass = findClassByName(targetClassNames, targetClassName);
+            if (targetClass == null) {
+                System.out.println("Class " + targetClassName + " not found.");
+                continue;
+            }
+    
+            System.out.print("Enter the type of relationship (e.g., Aggregation, Composition, Generalization): ");
+            String relationshipType = scanner.nextLine();
+            Relationship relationship = new Relationship(sourceClass, targetClass, relationshipType);
+            diagram.addRelationship(relationship);
+            System.out.println(diagram.toString());
+        }
+    }
+    
+    private static UmlClass findClassByName(List<String> classNames, String className) {
+        for (String name : classNames) {
+            if (name.equalsIgnoreCase(className)) {
+                return new UmlClass(name);
+            }
+        }
+        return null;
     }
 
 }
