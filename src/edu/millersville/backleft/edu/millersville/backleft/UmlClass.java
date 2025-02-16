@@ -3,13 +3,13 @@ package edu.millersville.backleft;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Class {
+public class UmlClass {
     private final String className;
     private final Map<String, String> attributes; // Field name -> Type
     private final Map<String, String> methods;    // Method name -> Return Type
 
     // Constructor for a 'Class' object
-    public Class(String className) {
+    public UmlClass(String className) {
         this.className = className;
         this.attributes = new HashMap<>();
         this.methods = new HashMap<>();

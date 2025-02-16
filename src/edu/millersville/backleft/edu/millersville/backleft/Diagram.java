@@ -7,7 +7,7 @@ import java.util.List;
 public class Diagram {
 
     private String diagramName;
-    private List<Class> classDefinitons;
+    private List<UmlClass> classDefinitons;
     private HashSet<Object> objectInstances;
     private HashSet<String> classNames;
     private List<Relationship> relationships;
@@ -54,7 +54,7 @@ public class Diagram {
     }
 
 
-    public void addClass(Class umlclass) {
+    public void addClass(UmlClass umlclass) {
         
         if(classNames.contains(umlclass.getClassName()))
             return;
@@ -104,6 +104,6 @@ public class Diagram {
 */
     @Override
     public String toString() {
-        return "Diagram: " + diagramName + "\nClasses: " + classes + "\nRelationships: " + relationships;
+        return "Diagram: " + diagramName + "\nClasses: " + classDefinitons + "\nRelationships: " + relationships;
     }
 }

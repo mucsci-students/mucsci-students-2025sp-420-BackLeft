@@ -5,42 +5,42 @@ package edu.millersville.backleft;
  */
 public class Attribute {
 
-    private final Class rootClass;
+    private final UmlClass rootClass;
     private final String type;
     private final String name;
 
     /**
      * Constructor for Attribute. Checks if the type is valid and if class are specified.
-     * @param Class the root class in the Attribute
+     * @param rootClass the root class in the Attribute
      * @param type the type of value
      * @param name the name of the Attribute
      */
-    public Attribute(Class class, String type, String name) {
-        if (class == null || name == null || type == null) {
+    public Attribute(UmlClass rootClass, String type, String name) {
+        if (rootClass == null || name == null || type == null) {
             throw new IllegalArgumentException("Need a class, name and type to create an Attribute");
         }
         
         this.rootClass = rootClass;
-        this.targetClass = targetClass;
         this.type = type;
+        this.name = name;
     }
 
-
-     /**
+    /**
      * Returns the class.
      * @return the class
      */
-    public Class getClass() {
-        return class;
+    public UmlClass getRootClass() {
+        return rootClass;
     }
 
-     /**
+    /**
      * Returns the name.
      * @return the name
      */
-    public Class getName() {
+    public String getName() {
         return name;
     }
+    
 
     /**
      * Returns the type.
@@ -54,6 +54,6 @@ public class Attribute {
     */
     @Override
     public String toString() {
-        
+        return "Attribute{name='" + name + "', type='" + type + "', rootClass=" + rootClass + "}";
     }
 }
