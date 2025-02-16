@@ -24,7 +24,6 @@ public class UmlClass {
     public void addAttribute(String name, String type) {
         attributes.put(name, type);
     }
-    
 
     // Creates a new method within an instance of a 'Class'
     public void addMethod(String name, String returnType) {
@@ -44,6 +43,15 @@ public class UmlClass {
     // Prints a 'Class' with all of its attributes and methods
     @Override
     public String toString() {
-        return "Class: " + className + "\nAttributes: " + attributes + "\nMethods: " + methods;
+        StringBuilder sb = new StringBuilder();
+        sb.append("Class: ").append(className).append("\nAttributes:\n");
+        for (Map.Entry<String, String> entry : attributes.entrySet()) {
+            sb.append("  ").append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        }
+        sb.append("Methods:\n");
+        for (Map.Entry<String, String> entry : methods.entrySet()) {
+            sb.append("  ").append(entry.getKey()).append(": ").append(entry.getValue()).append("\n");
+        }
+        return sb.toString();
     }
 }
