@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-import edu.millersville.backleft.Class;
+import edu.millersville.backleft.UmlClass;
 import edu.millersville.backleft.Diagram;
 import net.jqwik.api.*;
 
@@ -14,7 +14,7 @@ class DiagramTest {
     @Test
     void testJsonSaveLoad() {
         Diagram diagram = new Diagram("TestUML");
-        Class testClass = new Class("Person");
+        UmlClass testClass = new UmlClass("Person");
         testClass.addAttribute("name", "String");
         diagram.addClass(testClass);
 

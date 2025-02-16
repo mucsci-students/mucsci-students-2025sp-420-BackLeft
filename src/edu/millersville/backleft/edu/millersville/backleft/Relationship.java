@@ -1,5 +1,7 @@
 package edu.millersville.backleft;
 
+import java.util.Objects;
+
 /**
  * A versatile data object representing a relationship between two UML classes.
  */
@@ -10,8 +12,8 @@ public class Relationship {
     public static final String ASSOCIATION = "Association";
     public static final String GENERALIZATION = "Generalization";
 
-    private final Class rootClass;
-    private final Class targetClass;
+    private final UmlClass rootClass;
+    private final UmlClass targetClass;
     private final String type;
 
     /**
@@ -20,7 +22,7 @@ public class Relationship {
      * @param targetClass the target class in the relationship
      * @param type the type of relationship
      */
-    public Relationship(Class rootClass, Class targetClass, String type) {
+    public Relationship(UmlClass rootClass, UmlClass targetClass, String type) {
         if (rootClass == null || targetClass == null) {
             throw new IllegalArgumentException("Must choose two classes to create a relationship");
         }
@@ -45,7 +47,7 @@ public class Relationship {
      * Returns the root class.
      * @return the root class
      */
-    public Class getRootClass() {
+    public UmlClass getRootClass() {
         return rootClass;
     }
 
@@ -53,7 +55,7 @@ public class Relationship {
      * Returns the target class.
      * @return the target class
      */
-    public Class getTargetClass() {
+    public UmlClass getTargetClass() {
         return targetClass;
     }
 
