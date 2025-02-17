@@ -1,5 +1,6 @@
 package edu.millersville.backleft;
 
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -41,9 +42,6 @@ public class Main {
         userinput.close();
     }
 
-    public static void loadSavedDiagram() {
-        System.out.println("\n\n ** LOADING DIAGRAM FROM JSON..... (next set of prompts for diagram name, or filepath) **");
-    }
 
     public static void printHelpMenu() {
         System.out.println("\n\n ** Help Menu **");
@@ -121,7 +119,7 @@ public class Main {
                     break;
                 case "7":
                     System.out.println("Exiting...");
-                    return;
+                    promptDiagramSource();
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
@@ -139,8 +137,19 @@ public class Main {
         }
     }
 
+    public static void editDiagram(Diagram diagram){
+        
+    }
+
     public static void saveDiagram(Diagram diagram) {
         // Implementation for saving the diagram
+        DiagramManager.saveDiagram(diagram);
         System.out.println("Diagram saved.");
+    }
+
+    public static void loadSavedDiagram() {
+    System.out.println("\n\n ** Available Saved Diagrams **");
+    DiagramManager manager = new DiagramManager();
+    editDiagram(manager.loadDiagram());
     }
 }

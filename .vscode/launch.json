@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "edu.millersville.backleft.Main",
+            "projectName": "BackLeft_1a5bfe61"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "edu.millersville.backleft.DiagramManager",
+            "classPaths": [
+                "${workspaceFolder}/lib/gson-2.12.1.jar"
+            ]
+        }
+    ]
+}
