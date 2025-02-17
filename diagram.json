@@ -1,0 +1,21 @@
+{
+  "diagramName": "myd",
+  "classDefinitons": [
+    {
+      "className": "class1",
+      "attributes": {},
+      "methods": {}
+    },
+    {
+      "className": "class2",
+      "attributes": {},
+      "methods": {}
+    }
+  ],
+  "objectInstances": [],
+  "classNames": [
+    "class2",
+    "class1"
+  ],
+  "relationships": []
+}
