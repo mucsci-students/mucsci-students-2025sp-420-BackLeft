@@ -73,16 +73,38 @@ public class Main {
         String diagramName = scanner.nextLine();
         Diagram diagram = new Diagram(diagramName);
 
-        // Add initial classes
-        while (true) {
-            System.out.print("Enter the name of the UML class (or type 'done' to finish): ");
-            String className = scanner.nextLine();
-            if (className.equalsIgnoreCase("done")) {
-                break;
-            }
-            addClassToDiagram(scanner, diagram, className);
-        }
+        System.out.println("Diagram created successfully.");
+        System.out.println("Would you like to save the diagram or edit it?");
+        System.out.println("1. Save");
+        System.out.println("2. Edit");
+        System.out.println("3. Exit");
+        String choice = scanner.nextLine();
 
+        if (choice.equals("1")) {
+            saveDiagram(diagram);
+        } else if (choice.equals("2")) {
+            editDiagram(scanner, diagram);
+        }else if(choice.equals("3")){
+            System.out.println("Exiting...");
+            promptDiagramSource();
+        } else {
+            System.out.println("Invalid choice. Returning to main menu.");
+            promptDiagramSource();
+        }
+    }
+
+    private static void addClassToDiagram(Scanner scanner, Diagram diagram, String className) {
+        UmlClass umlClass = new UmlClass(className);
+        diagram.addClass(umlClass);
+        System.out.println("Class " + className + " created.");
+        System.out.println("Do you want to add attributes to this class? (yes/no)");
+        String response = scanner.nextLine();
+        if (response.equalsIgnoreCase("yes")) {
+            diagram.addAttributesToClass(scanner);
+        }
+    }
+
+    public static void editDiagram(Scanner scanner, Diagram diagram){
         // Main loop for further actions
         while (true) {
             System.out.println("What would you like to do next?");
@@ -98,9 +120,12 @@ public class Main {
 
             switch (choice) {
                 case "1":
-                    System.out.print("Enter the name of the UML class: ");
-                    String className = scanner.nextLine();
-                    addClassToDiagram(scanner, diagram, className);
+                System.out.print("Enter the name of the UML class (or type 'done' to finish): ");
+                String className = scanner.nextLine();
+            if (className.equalsIgnoreCase("done")) {
+                break;
+            }
+            addClassToDiagram(scanner, diagram, className);
                     break;
                 case "2":
                     diagram.createRelationships(scanner);
@@ -126,21 +151,6 @@ public class Main {
         }
     }
 
-    private static void addClassToDiagram(Scanner scanner, Diagram diagram, String className) {
-        UmlClass umlClass = new UmlClass(className);
-        diagram.addClass(umlClass);
-        System.out.println("Class " + className + " created.");
-        System.out.println("Do you want to add attributes to this class? (yes/no)");
-        String response = scanner.nextLine();
-        if (response.equalsIgnoreCase("yes")) {
-            diagram.addAttributesToClass(scanner);
-        }
-    }
-
-    public static void editDiagram(Diagram diagram){
-        
-    }
-
     public static void saveDiagram(Diagram diagram) {
         // Implementation for saving the diagram
         DiagramManager.saveDiagram(diagram);
@@ -150,6 +160,6 @@ public class Main {
     public static void loadSavedDiagram() {
     System.out.println("\n\n ** Available Saved Diagrams **");
     DiagramManager manager = new DiagramManager();
-    editDiagram(manager.loadDiagram());
+    //editDiagram(manager.loadDiagram());
     }
 }
