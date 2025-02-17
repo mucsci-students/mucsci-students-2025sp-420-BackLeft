@@ -137,6 +137,10 @@ public class Main {
         }
     }
 
+    public static void editDiagram(Diagram diagram){
+        
+    }
+
     public static void saveDiagram(Diagram diagram) {
         // Implementation for saving the diagram
         DiagramManager.saveDiagram(diagram);
@@ -145,57 +149,7 @@ public class Main {
 
     public static void loadSavedDiagram() {
     System.out.println("\n\n ** Available Saved Diagrams **");
-
-    // Directory where diagrams are stored (update path if needed)
-    String diagramDirectory = "diagrams/"; 
-    File dir = new File(diagramDirectory);
-    
-    // Check if directory exists
-    if (!dir.exists() || !dir.isDirectory()) {
-        System.out.println("No saved diagrams found.");
-        createNewDiagram();
-        return;
-    }
-
-    // Get list of files in the directory
-    File[] files = dir.listFiles((d, name) -> name.endsWith(".json"));
-    if (files == null || files.length == 0) {
-        System.out.println("No saved diagrams found.");
-        createNewDiagram();
-        return;
-    }
-
-    // Print available diagrams
-    System.out.println("Choose a diagram to load:");
-    for (int i = 0; i < files.length; i++) {
-        System.out.println((i + 1) + ". " + files[i].getName().replace(".json", ""));
-    }
-
-    // Get user input
-    Scanner scanner = new Scanner(System.in);
-    System.out.print("\nEnter the number of the diagram to load: ");
-    
-    int choice;
-    try {
-        choice = Integer.parseInt(scanner.nextLine());
-        if (choice < 1 || choice > files.length) {
-            System.out.println("Invalid choice. Returning to main menu.");
-            return;
-        }
-    } catch (NumberFormatException e) {
-        System.out.println("Invalid input. Returning to main menu.");
-        return;
-    }
-
-    // Load the chosen diagram
-    String fileName = files[choice - 1].getName();
-//     Diagram loadedDiagram = DiagramManager.loadDiagram(fileName);
-
-//     if (loadedDiagram != null) {
-//         System.out.println("\nSuccessfully loaded diagram: " + loadedDiagram.getDiagramName());
-//         createNewDiagram();
-//     } else {
-//         System.out.println("Failed to load diagram. Please try again.");
-//     }
+    DiagramManager manager = new DiagramManager();
+    editDiagram(manager.loadDiagram());
     }
 }
