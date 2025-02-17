@@ -156,8 +156,8 @@ public class Main {
     public static void loadSavedDiagram() {
     System.out.println("\n\n ** Available Saved Diagrams **");
     Scanner scanner = new Scanner(System.in);
-    DiagramManager manager = new DiagramManager();
-    Diagram diagram = manager.loadDiagrams();
-    editDiagram(scanner, diagram);
+    //DiagramManager manager = new DiagramManager();
+    //Diagram diagram = manager.loadDiagrams();
+    //editDiagram(scanner, diagram);
     }
 }

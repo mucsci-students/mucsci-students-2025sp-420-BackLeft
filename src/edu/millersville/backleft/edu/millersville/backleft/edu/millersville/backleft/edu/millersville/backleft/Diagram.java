@@ -109,8 +109,31 @@ public class Diagram {
             }
 
             while (true) {
-                System.out.print("Enter the type of relationship (e.g., Aggregation, Composition, Association, Generalization): ");
-                String relationshipType = scanner.nextLine();
+                System.out.println("Enter the type of relationship:");
+                System.out.println("1. Aggregation");
+                System.out.println("2. Composition");
+                System.out.println("3. Association");
+                System.out.println("4. Generalization");
+                System.out.print("Enter your choice: ");
+                String choice = scanner.nextLine();
+                String relationshipType;
+                switch (choice) {
+                    case "1":
+                        relationshipType = "Aggregation";
+                        break;
+                    case "2":
+                        relationshipType = "Composition";
+                        break;
+                    case "3":
+                        relationshipType = "Association";
+                        break;
+                    case "4":
+                        relationshipType = "Generalization";
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again.");
+                        continue;
+                }
                 try {
                     Relationship relationship = new Relationship(sourceClass, targetClass, relationshipType);
                     addRelationship(relationship);
@@ -120,7 +143,7 @@ public class Diagram {
                     System.out.println(e.getMessage());
                 }
             }
-            System.out.println(toString());
+            
         }
     }
 
