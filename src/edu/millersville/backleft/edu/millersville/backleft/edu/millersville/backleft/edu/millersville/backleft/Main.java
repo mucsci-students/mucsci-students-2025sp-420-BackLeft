@@ -51,7 +51,6 @@ public class Main {
         System.out.println("Options:");
         System.out.println("  -h, --help      Show this help menu\n");
         System.out.println("Interactive Commands:");
-        System.out.println("  command              Display this command menu");
         System.out.println("  exit                 Exit the program\n");
         System.out.println("  new                  Create a new Class Diagram\n");
         System.out.println("  save                 Save the current Class Diagram\n");
@@ -152,10 +151,6 @@ public class Main {
     }
 
 
-    public static void editDiagram(Diagram diagram){
-        return;
-    }
-
     public static void saveDiagram(Diagram diagram) {
         // Implementation for saving the diagram
         DiagramManager.saveDiagram(diagram);
@@ -164,7 +159,9 @@ public class Main {
 
     public static void loadSavedDiagram() {
     System.out.println("\n\n ** Available Saved Diagrams **");
+    Scanner scanner = new Scanner(System.in);
     DiagramManager manager = new DiagramManager();
-    editDiagram(manager.chooseDiagram());
+    Diagram diagram = manager.loadDiagrams();
+    editDiagram(scanner, diagram);
     }
 }
