@@ -151,15 +151,20 @@ public class Main {
         }
     }
 
+
+    public static void editDiagram(Diagram diagram){
+        return;
+    }
+
     public static void saveDiagram(Diagram diagram) {
         // Implementation for saving the diagram
         DiagramManager.saveDiagram(diagram);
-        System.out.println("Diagram saved.");
+        promptDiagramSource();
     }
 
     public static void loadSavedDiagram() {
     System.out.println("\n\n ** Available Saved Diagrams **");
     DiagramManager manager = new DiagramManager();
-    //editDiagram(manager.loadDiagram());
+    editDiagram(manager.chooseDiagram());
     }
 }

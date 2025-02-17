@@ -35,15 +35,17 @@ public class DiagramManager {
             e.printStackTrace();
             return null;
         }
+    }
 
-        // Directory where diagrams are stored (update path if needed)
-    String diagramDirectory = "diagrams/"; 
-    File dir = new File(diagramDirectory);
+    public static String chooseDiagram() {
+    // Directory where diagrams are stored (update path if needed)
+        String diagramDirectory = "diagrams/"; 
+        File dir = new File(diagramDirectory);
     
-    // Check if directory exists
-    if (!dir.exists() || !dir.isDirectory()) {
+        // Check if directory exists
+        if (!dir.exists() || !dir.isDirectory()) {
         System.out.println("No saved diagrams found.\n");
-        return;
+        return "";
     }
 
     // Get list of files in the directory
