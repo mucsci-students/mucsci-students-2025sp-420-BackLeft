@@ -96,11 +96,6 @@ public class Main {
         UmlClass umlClass = new UmlClass(className);
         diagram.addClass(umlClass);
         System.out.println("Class " + className + " created.");
-        System.out.println("Do you want to add attributes to this class? (yes/no)");
-        String response = scanner.nextLine();
-        if (response.equalsIgnoreCase("yes")) {
-            diagram.addAttributesToClass(scanner);
-        }
     }
 
     public static void editDiagram(Scanner scanner, Diagram diagram){
@@ -119,6 +114,7 @@ public class Main {
 
             switch (choice) {
                 case "1":
+                System.out.println("Existing Classes: " + diagram.getClassNames());
                 System.out.print("Enter the name of the UML class (or type 'done' to finish): ");
                 String className = scanner.nextLine();
             if (className.equalsIgnoreCase("done")) {
@@ -161,7 +157,7 @@ public class Main {
     System.out.println("\n\n ** Available Saved Diagrams **");
     Scanner scanner = new Scanner(System.in);
     DiagramManager manager = new DiagramManager();
-    Diagram diagram = manager.loadDiagrams();
-    editDiagram(scanner, diagram);
+    //Diagram diagram = manager.loadDiagrams();
+    //editDiagram(scanner, diagram);
     }
 }
