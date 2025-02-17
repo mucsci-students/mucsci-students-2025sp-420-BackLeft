@@ -14,7 +14,7 @@ public class DiagramManager {
     // Save the diagram to a JSON file
     public static void saveDiagram(Diagram diagram) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String fileName = diagram.getDiagramName() + ".json";
+        String fileName = "all_saved_diagrams/" + diagram.getDiagramName() + ".json";
         
         try (FileWriter writer = new FileWriter(fileName)) {
             gson.toJson(diagram, writer);
@@ -29,11 +29,9 @@ public class DiagramManager {
         
         String fileName = listDiagrams();
 
-
         Gson gson = new Gson();
         Type diagramType = new TypeToken<Diagram>() {}.getType();
-        
-        try (FileReader reader = new FileReader(fileName)) {
+        try (FileReader reader = new FileReader("all_saved_diagrams/" + fileName)) {
             return gson.fromJson(reader, diagramType);
         } catch (IOException e) {
             e.printStackTrace();
@@ -43,14 +41,9 @@ public class DiagramManager {
 
     public static String listDiagrams() {
     // Directory where diagrams are stored (update path if needed)
-        String diagramDirectory = "diagrams/"; 
+        String diagramDirectory = "all_saved_diagrams/"; 
         File dir = new File(diagramDirectory);
         
-        // Check if directory exists
-        if (!dir.exists() || !dir.isDirectory()) {
-        System.out.println("No saved diagrams found.\n");
-        return "failed";
-    }
 
     // Get list of files in the directory
     File[] files = dir.listFiles((d, name) -> name.endsWith(".json"));
@@ -74,24 +67,17 @@ public class DiagramManager {
         choice = Integer.parseInt(scanner.nextLine());
         if (choice < 1 || choice > files.length) {
             System.out.println("Invalid choice. Returning to main menu.");
-            return;
+            return "failed";
         }
     } catch (NumberFormatException e) {
         System.out.println("Invalid input. Returning to main menu.");
-        return;
+        return "failed";
     }
 
     // Load the chosen diagram
     String fileName = files[choice - 1].getName();
-//     Diagram loadedDiagram = DiagramManager.loadDiagram(fileName);
-
-//     if (loadedDiagram != null) {
-//         System.out.println("\nSuccessfully loaded diagram: " + loadedDiagram.getDiagramName());
-//         createNewDiagram();
-//     } else {
-//         System.out.println("Failed to load diagram. Please try again.");
-//     }
-    }
+    return fileName;
+}
 
     
 
