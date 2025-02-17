@@ -10,13 +10,13 @@ import java.lang.reflect.Type;
 import java.util.Scanner;
 
 public class DiagramManager {
-    private static final String FILE_NAME = "diagram.json";
 
     // Save the diagram to a JSON file
     public static void saveDiagram(Diagram diagram) {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String fileName = diagram.getDiagramName() + ".json";
         
-        try (FileWriter writer = new FileWriter(FILE_NAME)) {
+        try (FileWriter writer = new FileWriter(fileName)) {
             gson.toJson(diagram, writer);
             System.out.println("Diagram saved successfully!");
         } catch (IOException e) {
@@ -26,31 +26,37 @@ public class DiagramManager {
 
     // Load the diagram from a JSON file
     public static Diagram loadDiagram() {
+        
+        String fileName = listDiagrams();
+
+
         Gson gson = new Gson();
         Type diagramType = new TypeToken<Diagram>() {}.getType();
         
-        try (FileReader reader = new FileReader(FILE_NAME)) {
+        try (FileReader reader = new FileReader(fileName)) {
             return gson.fromJson(reader, diagramType);
         } catch (IOException e) {
             e.printStackTrace();
             return null;
         }
+    }
 
-        // Directory where diagrams are stored (update path if needed)
-    String diagramDirectory = "diagrams/"; 
-    File dir = new File(diagramDirectory);
-    
-    // Check if directory exists
-    if (!dir.exists() || !dir.isDirectory()) {
+    public static String listDiagrams() {
+    // Directory where diagrams are stored (update path if needed)
+        String diagramDirectory = "diagrams/"; 
+        File dir = new File(diagramDirectory);
+        
+        // Check if directory exists
+        if (!dir.exists() || !dir.isDirectory()) {
         System.out.println("No saved diagrams found.\n");
-        return;
+        return "failed";
     }
 
     // Get list of files in the directory
     File[] files = dir.listFiles((d, name) -> name.endsWith(".json"));
     if (files == null || files.length == 0) {
         System.out.println("No saved diagrams found.\n");
-        return;
+        return "failed";
     }
 
     // Print available diagrams
